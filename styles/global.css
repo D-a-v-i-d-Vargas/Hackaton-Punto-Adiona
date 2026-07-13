@@ -1,3 +1,35 @@
+.mi-navbar-empresa {
+    background-color:#0D2953 !important; 
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav.mi-navbar-empresa .nombre-empresa {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+nav.mi-navbar-empresa ul.navbar-nav li.nav-item a.nav-link {
+    color: #ffffff !important;
+    opacity: 0.8;
+    font-weight: 400;
+}
+/* Estilos iconos */
+.iconos-nav .icono-link {
+    color: #ffffff !important; /* Letras*/
+    font-size: 1.3rem; /* Tamaño */
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+    margin-left: 15px; /* Separación*/
+}
+
+.iconos-nav .icono-link:hover {
+    opacity: 1 !important;
+}
+
+
 @import url("./footer.css");
 
 * {
