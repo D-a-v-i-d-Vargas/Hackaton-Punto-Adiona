@@ -20,6 +20,3 @@
 *   **CSS3** - Estilos personalizados, efectos de cristal, capas de tinte y transiciones de transformación.
 *   **JavaScript (ES6+)** - Lógica del observador de intersección para optimización y detonación de animaciones.
 *   **Bootstrap 5** - Framework CSS para agilizar la maquetación y asegurar la responsividad.
-
-    ├── bmx-catalogo.jpg     # Imagen de categoría urbana/trucos
-    └── ruta-catalogo.jpg    # Imagen de categoría de velocidad/asfalto
