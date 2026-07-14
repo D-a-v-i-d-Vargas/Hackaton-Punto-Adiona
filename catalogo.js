@@ -31,7 +31,7 @@ const gravelCategoria = [
             "Juego de ruedas Syncros RP2.0 Dis", 
             "Cubiertas Schwalbe G-One RX"]
     },
-        { 
+    { 
         id: "gravel-2", 
         nombre: "ADDICT GRAVEL 30 MY26 WHITE/SPLATTER BLUE", 
         modelo: "425366", 
@@ -58,7 +58,7 @@ const montanaCategoria = [
             "Frenos de disco hidráulicos Tektro", 
             "Kenda Booster"]
     },
-        { 
+    { 
         id: "spark-rc-2", 
         nombre: "CONTESSA SCALE 900 COMP", 
         modelo: "291329", 
@@ -71,27 +71,28 @@ const montanaCategoria = [
     }
 ];
 
+// Instanciar o recuperar el carrito de localStorage al iniciar el archivo
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// 2. LA FUNCIÓN REUTILIZABLE
+// 2. LA FUNCIÓN REUTILIZABLE (Mantiene exactamente tus estilos)
 function renderizarCatalogo(listaProductos, idContenedor) {
-    // Buscamos el contenedor directamente usando el ID que le pasemos
     const elementoContenedor = document.getElementById(idContenedor);
     
-    // Si el contenedor con ese ID no existe en el HTML actual, salimos para evitar errores
     if (!elementoContenedor) return;
 
-    // Limpiamos el contenedor por seguridad
     elementoContenedor.innerHTML = '';
 
     listaProductos.forEach((bici, index) => {
         const esElUltimo = index === listaProductos.length - 1;
 
-        // Convertimos el array de textos en etiquetas <li>
+        // Convertimos el precio de string ("$71,150") a número puro (71150) para que sea operable en el carrito
+        const precioNumerico = parseFloat(bici.precio.replace(/[^0-9.-]+/g,""));
+
         const especificacionesHtml = bici.especificaciones
             .map(item => `<li>${item}</li>`)
             .join('');
 
-        // Inyectamos la plantilla (Se corrigió ${specificacionesHtml} por ${especificacionesHtml})
+        // Agregamos la clase identificadora 'btn-agregar-carrito' y los atributos 'data-*'
         elementoContenedor.innerHTML += `
             <section class="container-md my-5" id="${bici.id}">
                 <div class="row align-items-center justify-content-center">
@@ -106,7 +107,12 @@ function renderizarCatalogo(listaProductos, idContenedor) {
                         <ul>
                             ${especificacionesHtml}
                         </ul>
-                        <button type="button" class="btn btn-outline-danger me-md-2">
+                        <button type="button" 
+                                class="btn btn-outline-danger me-md-2 btn-agregar-carrito"
+                                data-id="${bici.id}"
+                                data-nombre="${bici.nombre}"
+                                data-precio="${precioNumerico}"
+                                data-imagen="${bici.imagen}">
                             Agregar al carrito
                         </button>
                     </div>
@@ -117,8 +123,50 @@ function renderizarCatalogo(listaProductos, idContenedor) {
     });
 }
 
+// 3. CONTROLADOR DE EVENTOS PARA AGREGAR AL CARRITO
+document.addEventListener('DOMContentLoaded', () => {
+    // Actualiza la burbuja del menú con lo que ya esté guardado al cargar la página
+    actualizarContadorMenu();
 
-// Se pasa: (El Array de datos, "El ID del contenedor en el HTML")
-renderizarCatalogo(ebikesCategoria, "contenedor-productos-1");
-renderizarCatalogo(gravelCategoria, "contenedor-productos-2");
-renderizarCatalogo(montanaCategoria, "contenedor-productos-3");
+    // Renderizados iniciales de tus catálogos
+    renderizarCatalogo(ebikesCategoria, "contenedor-productos-1");
+    renderizarCatalogo(gravelCategoria, "contenedor-productos-2");
+    renderizarCatalogo(montanaCategoria, "contenedor-productos-3");
+
+    // Escucha global de clicks para capturar los botones inyectados dinámicamente
+    document.body.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-agregar-carrito')) {
+            const boton = e.target;
+            const id = boton.getAttribute('data-id');
+            const nombre = boton.getAttribute('data-nombre');
+            const precio = parseFloat(boton.getAttribute('data-precio'));
+            const imagen = boton.getAttribute('data-imagen');
+
+            // Comprobar si ya existe en el carrito
+            const productoExistente = carrito.find(item => item.id === id);
+
+            if (productoExistente) {
+                productoExistente.cantidad++;
+            } else {
+                carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
+            }
+
+            // Guardar localmente
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            
+            // Actualizar la interfaz (burbuja de notificación del menú)
+            actualizarContadorMenu();
+
+            alert(`¡${nombre} se agregó a tu carrito!`);
+        }
+    });
+});
+
+// 4. FUNCIÓN PARA ACTUALIZAR LA BURBUJA DEL MENÚ
+function actualizarContadorMenu() {
+    const badge = document.querySelector('.badge.bg-danger');
+    if (badge) {
+        const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
+        badge.textContent = totalProductos;
+    }
+}

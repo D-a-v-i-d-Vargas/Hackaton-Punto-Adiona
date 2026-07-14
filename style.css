@@ -1,5 +1,341 @@
+/*estilo de las imagenes del carrusel*/
+
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center 60%;   /* en vez de center */
+}
+/*estilo de las imagenes del carrusel*/
+.hero-text {
+    position: absolute;      /* saca el texto del flujo normal */
+    top: 10%;                 /* lo baja 10% desde arriba */
+    left: 3%;                 /* lo mueve 3% desde la izquierda */
+    max-width: 500px;         /* limita el ancho del bloque */
+    margin: 0;                /* quita márgenes por defecto */
+}
+
+.hero-text h1 {
+    color: white;                     /* color del texto (rojo) */
+    font-size: 2.8rem;                  /* tamaño de letra */
+    font-weight: 750;                   /* grosor bien negrita */
+    line-height: 1.1;                   /* espacio entre líneas */
+    text-transform: uppercase;          /* pone todo en mayúsculas */
+    letter-spacing: 1px;                /* espacio entre letras */
+    text-align: left;                   /* alinea texto a la izquierda */
+    text-shadow: 3px 3px 10px rgba(0,0,0,.5); /* sombra para contraste */
+    margin: 0;                          /* quita márgenes por defecto */
+}
+
+.hero-caption {
+    position: absolute;   /* saca el contenedor del flujo normal */
+    top: 0;                /* pegado arriba */
+    left: 0;               /* pegado a la izquierda */
+    right: 0;              /* pegado a la derecha */
+    bottom: 0;             /* pegado abajo (cubre toda la imagen) */
+    padding: 0;            /* sin espacio interno */
+    text-align: left;      /* alinea contenido a la izquierda */
+    pointer-events: none;  /* no bloquea clics (transparente a eventos) */
+}
+
+.hero-caption .btn {
+    pointer-events: auto;  /* el botón sí recibe clics */
+}
+.mi-navbar-empresa {
+    background-color:#0D2953 !important; 
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav.mi-navbar-empresa .nombre-empresa {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+nav.mi-navbar-empresa ul.navbar-nav li.nav-item a.nav-link {
+    color: #ffffff !important;
+    opacity: 0.8;
+    font-weight: 400;
+}
+/* Estilos iconos */
+.iconos-nav .icono-link {
+    color: #ffffff !important; /* Letras*/
+    font-size: 1.3rem; /* Tamaño */
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+    margin-left: 15px; /* Separación*/
+}
+
+.iconos-nav .icono-link:hover {
+    opacity: 1 !important;
+}
+:root {
+    --azul-marino: #0D2953;
+    --rojo: #C62828;
+    --rojo-hover: #a81f1f;
+    --beige: #EAD7B5;
+    --cafe: #7A4E2E;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--blanco);
+}
+/* ===== FOOTER ===== */
+.site-footer {
+    background-color: var(--negro);
+    color: var(--beige);
+}
+/* --- Newsletter --- */
+.footer-newsletter {
+    background-color: var(--beige);
+    padding: 40px 20px;
+    border-bottom: 3px solid var(--cafe);
+
+}
+.newsletter-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.newsletter-content h3 {
+    color: var(--azul-marino);
+    font-size: 1.6rem;
+    margin: 0 0 20px;
+}
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.newsletter-input {
+    background-color: var(--blanco);
+    color: var(--negro);
+    border: none;
+    border-radius: 4px;
+    padding: 14px 18px;
+    width: 320px;
+    max-width: 100%;
+    font-size: 1rem;
+}
+.newsletter-input::placeholder {
+    color: #555;
+}
+.newsletter-input:focus {
+    outline: 2px solid var(--rojo);
+}
+.newsletter-btn {
+    background-color: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    border-radius: 4px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.newsletter-btn:hover {
+    background-color: var(--rojo-hover);
+}
+/* --- Punto Adiona/Contacto/Síguenos --- */
+.footer-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+.footer-column {
+    flex: 1 1 220px;
+}
+.footer-brand h2 {
+    color: var(--beige);
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+.footer-brand p {
+    color: #cbb896;
+    margin: 0;
+    line-height: 1.5;
+}
+.footer-column h4 {
+    color: var(--beige);
+    margin: 0 0 15px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--cafe);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--beige);
+    margin: 0;
+}
+.contact-item .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--rojo);
+    flex-shrink: 0;
+}
+.social-icons {
+    display: flex;
+    gap: 14px;
+}
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--cafe);
+    color: var(--beige);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.social-link:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+/* --- Leyenda Copyright --- */
+.footer-bottom {
+    border-top: 1px solid var(--cafe);
+    padding: 18px 20px;
+    text-align: center;
+    background-color: var(--rojo-hover);
+}
+.footer-bottom p {
+    margin: 0;
+    color: #b3a37d;
+    font-size: 0.9rem;
+}
+/* --- --- */
+@media (max-width: 600px) {
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-main {
+        text-align: center;
+        justify-content: center;
+    }
+    .contact-item {
+        justify-content: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+        .carrito-modulo {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
+            padding: 10px;
+        }
+        .carrito-titulo {
+            color: #1e293b;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        .carrito-layout {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .carrito-cuerpo {
+            flex: 2;
+            min-width: 300px;
+        }
+        .carrito-resumen {
+            flex: 1;
+            min-width: 280px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            align-self: flex-start;
+        }
+        .carrito-lista {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .carrito-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        .carrito-vacio {
+            color: #94a3b8;
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px dashed #cbd5e1;
+            border-radius: 6px;
+        }
+        .carrito-fila {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #475569;
+        }
+        .carrito-fila-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        #carrito-total-precio {
+            color: #10b981;
+        }
+        .carrito-divisor {
+            border: 0;
+            border-top: 1px solid #cbd5e1;
+            margin: 15px 0;
+        }
+        .carrito-btn-pagar {
+            width: 100%;
+            background-color: #3b82f6;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .carrito-btn-pagar:hover {
+            background-color: #14d547;
+        }
+
 /* =========================================
     FRANJA DIVISORA DE ANCHO COMPLETO
+========================================= */
 
 .franja-azul {
     background-color: #0D2953; 
@@ -18,6 +354,7 @@
 
 /* =========================================
     TARJETAS ESTILO SCOTT (IMÁGENES Y BOTONES)
+========================================= */
 
 .tarjeta-enlace {
     text-decoration: none;
@@ -87,6 +424,7 @@
 
 /* =========================================
    ANIMACIONES DE SCROLL
+========================================= */
 
 .animar-arriba {
     opacity: 0; 
@@ -97,6 +435,178 @@
 .animar-arriba.visible {
     opacity: 1; 
     transform: translateY(0); 
+}
+
+:root {
+    --azul-marino: #0D2953;
+    --rojo: #C62828;
+    --rojo-hover: #a81f1f;
+    --beige: #EAD7B5;
+    --cafe: #7A4E2E;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--blanco);
+}
+/* ===== FOOTER ===== */
+.site-footer {
+    background-color: var(--negro);
+    color: var(--beige);
+}
+/* --- Newsletter --- */
+.footer-newsletter {
+    background-color: var(--beige);
+    padding: 40px 20px;
+    border-bottom: 3px solid var(--cafe);
+
+}
+.newsletter-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.newsletter-content h3 {
+    color: var(--azul-marino);
+    font-size: 1.6rem;
+    margin: 0 0 20px;
+}
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.newsletter-input {
+    background-color: var(--blanco);
+    color: var(--negro);
+    border: none;
+    border-radius: 4px;
+    padding: 14px 18px;
+    width: 320px;
+    max-width: 100%;
+    font-size: 1rem;
+}
+.newsletter-input::placeholder {
+    color: #555;
+}
+.newsletter-input:focus {
+    outline: 2px solid var(--rojo);
+}
+.newsletter-btn {
+    background-color: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    border-radius: 4px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.newsletter-btn:hover {
+    background-color: var(--rojo-hover);
+}
+/* --- Punto Adiona/Contacto/Síguenos --- */
+.footer-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+.footer-column {
+    flex: 1 1 220px;
+}
+.footer-brand h2 {
+    color: var(--beige);
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+.footer-brand p {
+    color: #cbb896;
+    margin: 0;
+    line-height: 1.5;
+}
+.footer-column h4 {
+    color: var(--beige);
+    margin: 0 0 15px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--cafe);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--beige);
+    margin: 0;
+}
+.contact-item .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--rojo);
+    flex-shrink: 0;
+}
+.social-icons {
+    display: flex;
+    gap: 14px;
+}
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--cafe);
+    color: var(--beige);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.social-link:hover {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+/* --- Leyenda Copyright --- */
+.footer-bottom {
+    border-top: 1px solid var(--cafe);
+    padding: 18px 20px;
+    text-align: center;
+    background-color: var(--rojo-hover);
+}
+.footer-bottom p {
+    margin: 0;
+    color: #b3a37d;
+    font-size: 0.9rem;
+}
+/* --- --- */
+@media (max-width: 600px) {
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-main {
+        text-align: center;
+        justify-content: center;
+    }
+    .contact-item {
+        justify-content: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
 }
 /*estilo de las imagenes del carrusel*/
 
@@ -140,4 +650,152 @@
 
 .hero-caption .btn {
     pointer-events: auto;  /* el botón sí recibe clics */
+}
+
+.mi-navbar-empresa {
+    background-color:#0D2953 !important; 
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav.mi-navbar-empresa .nombre-empresa {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+nav.mi-navbar-empresa ul.navbar-nav li.nav-item a.nav-link {
+    color: #ffffff !important;
+    opacity: 0.8;
+    font-weight: 400;
+}
+/* Estilos iconos */
+.iconos-nav .icono-link {
+    color: #ffffff !important; /* Letras*/
+    font-size: 1.3rem; /* Tamaño */
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+    margin-left: 15px; /* Separación*/
+}
+
+.iconos-nav .icono-link:hover {
+    opacity: 1 !important;
+}
+
+/* ==========================================================================
+   SECCIÓN DE CONTACTO - PUNTO ADIONA
+   ========================================================================== */
+
+.seccion-contacto {
+    padding: 60px 0;
+}
+
+.contacto-titulo-principal {
+    color: #0D2953;
+}
+
+.info-contacto-caja {
+    background-color: #0D2953;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    height: 100%;
+}
+
+.info-contacto-caja h3 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #C62828; /* Rojo corporativo Scott */
+    margin-right: 15px;
+}
+
+.redes-sociales-contacto a {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales-contacto a:hover {
+    color: #C62828;
+}
+
+.formulario-contacto {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.formulario-contacto h3 {
+    color: #0D2953;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.formulario-contacto .btn-enviar {
+    background-color: #C62828; /* Rojo corporativo Scott */
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-contacto .btn-enviar:hover {
+    background-color: #0D2953;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   SECCIÓN SOBRE NOSOTROS - PUNTO ADIONA
+   ========================================================================== */
+
+.nosotros-portada {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagenes-catalogo/portada-catalogo.avif');
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nosotros-portada h1 {
+    color: #ffffff;
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+.nosotros-subtitulo {
+    color: #0D2953; /* Azul Corporativo */
+}
+
+.nosotros-tarjeta-info {
+    background-color: #f8f9fa;
+    border-left: 5px solid #C62828; /* Detalle en rojo Scott */
+    padding: 30px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    height: 100%;
+}
+
+.nosotros-tarjeta-info h3 {
+    color: #0D2953;
+}
+
+.nosotros-tarjeta-info i {
+    font-size: 1.8rem;
+    color: #C62828;
 }
