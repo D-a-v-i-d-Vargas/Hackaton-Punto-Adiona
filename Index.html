@@ -103,6 +103,111 @@
 
     </html>
 <html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Enlace vital a tus estilos -->
+    <link rel="stylesheet" href="style.css"> 
+    <title>Punto Adiona</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Tu navegación irá aquí -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: INICIO -->
+        <section id="inicio" class="container py-5">
+            <h1>Inicio</h1>
+        </section>
+
+        <!-- SECCIÓN 2: CATÁLOGO -->
+        <section id="catalogo">
+            
+            <!-- FRANJA DIVISORA DE LADO A LADO (Con animación) -->
+            <div class="container-fluid franja-azul animar-arriba">
+                <div class="container text-center">
+                    <h2 class="text-uppercase fw-bold titulo-interior">¿YA SABES CÓMO QUIERES RODAR?</h2>
+                </div>
+            </div>
+
+            <!-- CONTENEDOR DE LAS 3 TARJETAS -->
+            <div class="container">
+                <!-- Fila con la clase de animación -->
+                <div class="row g-1 justify-content-center mt-4 mb-5 animar-arriba"> 
+                    
+                    <!-- Tarjeta 1: MTB -->
+                    <div class="col-12 col-md-4">
+                        <a href="#mtb" class="tarjeta-enlace">
+                            <div class="tarjeta-scott-style" style="background-image: url('Imagenes_bicicletas/black-and-brown-.jpg');">
+                                <div class="capa-tinte"></div>
+                                <div class="contenedor-boton">
+                                    <span class="btn-cristal">MTB</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <!-- Tarjeta 2: BMX -->
+                    <div class="col-12 col-md-4">
+                        <a href="#bmx" class="tarjeta-enlace">
+                            <div class="tarjeta-scott-style" style="background-image: url('Imagenes_bicicletas/brave-man-doing-tricks-long-shot.jpg');">
+                                <div class="capa-tinte"></div>
+                                <div class="contenedor-boton">
+                                    <span class="btn-cristal">BMX</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <!-- Tarjeta 3: RUTA -->
+                    <div class="col-12 col-md-4">
+                        <a href="#ruta" class="tarjeta-enlace">
+                            <div class="tarjeta-scott-style" style="background-image: url('Imagenes_bicicletas/mujer-ciclista-profesional_23-2149703298.avif');">
+                                <div class="capa-tinte"></div>
+                                <div class="contenedor-boton">
+                                    <span class="btn-cristal">RUTA</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Aquí debajo va el Footer -->
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Script del Observador de Animaciones -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elementosAnimar = document.querySelectorAll('.animar-arriba');
+            
+            const observador = new IntersectionObserver((entradas, observador) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                        observador.unobserve(entrada.target); 
+                    }
+                });
+            }, {
+                threshold: .80
+            });
+
+            elementosAnimar.forEach(elemento => {
+                observador.observe(elemento);
+            });
+        });
+    </script>
+</body>
 
 <head>
     <meta charset="UTF-8">
