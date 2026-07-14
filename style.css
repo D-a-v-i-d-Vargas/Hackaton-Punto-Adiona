@@ -1,0 +1,103 @@
+/* =========================================
+    FRANJA DIVISORA DE ANCHO COMPLETO
+========================================= */
+
+.franja-azul {
+    background-color: #0D2953; 
+    width: 100%;
+    padding: 30px 0; 
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+}
+
+.titulo-interior {
+    color: #ffffff; 
+    margin: 0; 
+    letter-spacing: 2px;
+    font-size: 2rem;
+}
+
+/* =========================================
+    TARJETAS ESTILO SCOTT (IMÁGENES Y BOTONES)
+========================================= */
+
+.tarjeta-enlace {
+    text-decoration: none;
+    display: block; 
+}
+
+.tarjeta-scott-style {
+    position: relative;
+    width: 100%;
+    height: 450px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.capa-tinte {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 41, 83, 0.4); 
+    transition: background-color 0.4s ease;
+    z-index: 1;
+}
+
+.tarjeta-enlace:hover .capa-tinte {
+    background-color: rgba(13, 41, 83, 0.1); 
+}
+
+.contenedor-boton {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+    padding: 0 10%; 
+    margin-bottom: 40px; 
+    display: flex;
+    justify-content: center;
+}
+
+.btn-cristal {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px); 
+}
+
+.tarjeta-enlace:hover .btn-cristal {
+    background-color: #C62828; 
+    border-color: #C62828;
+    color: #ffffff;
+}
+
+/* =========================================
+   ANIMACIONES DE SCROLL
+========================================= */
+
+.animar-arriba {
+    opacity: 0; 
+    transform: translateY(60px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.animar-arriba.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
