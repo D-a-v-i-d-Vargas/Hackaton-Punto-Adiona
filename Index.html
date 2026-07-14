@@ -9,7 +9,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+<link rel="stylesheet" href="style.css">
     <title>Punto Adiona</title>
 </head>
       
@@ -149,8 +149,11 @@
             <!-- Tu navegación irá aquí -->
         </nav>
     </header>
-
-    <main>
+  <main>
+        <!-- SECCIÓN 1: INICIO -->
+        <section id="inicio" class="container py-5">
+            <h1>Inicio</h1>
+        </section>
 
         <!-- SECCIÓN 2: CATÁLOGO -->
         <section id="catalogo">
@@ -186,7 +189,6 @@
                                 <div class="capa-tinte"></div>
                                 <div class="contenedor-boton">
                                     <span class="btn-cristal">BMX</span>
-                                    
                                 </div>
                             </div>
                         </a>
@@ -208,7 +210,7 @@
             </div>
         </section>
     </main>
-
+    <main>
 <header>
             <nav>
             </nav>
@@ -236,7 +238,26 @@
     <script src="catalogo.js"></script>
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elementosAnimar = document.querySelectorAll('.animar-arriba');
+            
+            const observador = new IntersectionObserver((entradas, observador) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                        observador.unobserve(entrada.target); 
+                    }
+                });
+            }, {
+                threshold: .80
+            });
 
+            elementosAnimar.forEach(elemento => {
+                observador.observe(elemento);
+            });
+        });
+    </script>
 
 
     
@@ -309,4 +330,5 @@
             </p>
         </div>
     </footer>
+    
 </html>
