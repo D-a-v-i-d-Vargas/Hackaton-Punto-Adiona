@@ -1,10 +1,10 @@
 /*estilo de las imagenes del carrusel*/
 
 .carousel-item img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: center 60%;   /* en vez de center */
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center 60%;   /* en vez de center */
 }
 /*estilo de las imagenes del carrusel*/
 .hero-text {
@@ -423,7 +423,7 @@ body {
 }
 
 /* =========================================
-   ANIMACIONES DE SCROLL
+    ANIMACIONES DE SCROLL
 ========================================= */
 
 .animar-arriba {
@@ -611,10 +611,10 @@ body {
 /*estilo de las imagenes del carrusel*/
 
 .carousel-item img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: center 60%;   /* en vez de center */
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center 60%;   /* en vez de center */
 }
 /*estilo de las imagenes del carrusel*/
 .hero-text {
@@ -684,7 +684,7 @@ nav.mi-navbar-empresa ul.navbar-nav li.nav-item a.nav-link {
 }
 
 /* ==========================================================================
-   SECCIÓN DE CONTACTO - PUNTO ADIONA
+    SECCIÓN DE CONTACTO - PUNTO ADIONA
    ========================================================================== */
 
 .seccion-contacto {
@@ -759,7 +759,7 @@ nav.mi-navbar-empresa ul.navbar-nav li.nav-item a.nav-link {
 }
 
 /* ==========================================================================
-   SECCIÓN SOBRE NOSOTROS - PUNTO ADIONA
+    SECCIÓN SOBRE NOSOTROS - PUNTO ADIONA
    ========================================================================== */
 
 .nosotros-portada {
