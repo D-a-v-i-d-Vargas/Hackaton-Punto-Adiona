@@ -1,5 +1,5 @@
 function guardarEnStorage() {
-  localStorage.setItem("mensaje", "HOLA CH69");
+    localStorage.setItem("mensaje", "HOLA CH69");
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -20,4 +20,3 @@ document.addEventListener("DOMContentLoaded", function() {
                 observador.observe(elemento);
             });
         });
-   
